@@ -1,9 +1,6 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { HomePage } from "./home/page";
+import "../src/styles/global.scss";
 
 export default function Home() {
-  return <main className={styles.main}>Ola mundo</main>;
+  return <HomePage />;
 }
