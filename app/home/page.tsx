@@ -1,14 +1,13 @@
-import Image from "next/image";
-import Logo from "../../src/assets/logo.svg";
-import styles from "./styles.module.scss";
+import { Summary } from "@/src/components/Summary";
+import { TopHeader } from "@/src/components/Header";
 
 export function HomePage() {
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <Image src={Logo} alt="Logo" />
-        <button className={styles.button}> NOVA TRANSAÇÃO </button>
-      </div>
-    </div>
+    <>
+      <TopHeader />
+      <main>
+        <Summary />
+      </main>
+    </>
   );
 }
