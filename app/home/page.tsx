@@ -1,12 +1,14 @@
 import { Summary } from "@/src/components/Summary";
-import { TopHeader } from "@/src/components/Header";
+import { Header } from "@/src/components/Header";
+import { TableContent } from "@/src/components/Table";
 
 export function HomePage() {
   return (
     <>
-      <TopHeader />
+      <Header />
       <main>
         <Summary />
+        <TableContent />
       </main>
     </>
   );
