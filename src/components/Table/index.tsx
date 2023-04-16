@@ -19,7 +19,7 @@ export function TableContent() {
             <td className={styles.deposit}>R$ 12.000</td>
             <td>Venda</td>
             <td>13/04/2021</td>
-            <td>
+            <td className={styles.deleteButton}>
               <img src="/assets/delete.png" alt="Excluir transação" />
             </td>
           </tr>
