@@ -15,7 +15,7 @@ interface GlobalContextData {
   category: string;
   handleNameChange: (event: any) => void;
   handleamountChange: (event: any) => void;
-  handleTypeChange: (event: any) => void;
+  handleTypeChange: any;
   handleCategoryChange: (event: any) => void;
   handleSubmit: (event: { preventDefault: () => void }) => void;
 
@@ -97,8 +97,8 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
     setAmount(event.target.value);
   };
 
-  const handleTypeChange = (event: any) => {
-    setType(event.target.innerText.trim());
+  const handleTypeChange = (type: string) => {
+    setType(type);
   };
 
   const handleCategoryChange = (event: any) => {

@@ -58,7 +58,8 @@ export function Header() {
                       className={
                         type === "Entrada" ? styles.active : styles.inactive
                       }
-                      onClick={handleTypeChange}
+                      name="income"
+                      onClick={() => handleTypeChange("deposit")}
                     >
                       <Image src={Income} alt="income" />
                       <span> Entrada </span>
@@ -68,9 +69,10 @@ export function Header() {
                       className={
                         type === "Saída" ? styles.active : styles.inactive
                       }
-                      onClick={handleTypeChange}
+                      name="withdraw"
+                      onClick={() => handleTypeChange("withdraw")}
                     >
-                      <Image src={Outcome} alt="income" />
+                      <Image src={Outcome} alt="Outcome" />
                       <span> Saída </span>
                     </button>
                   </div>
