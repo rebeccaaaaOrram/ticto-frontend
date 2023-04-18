@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 interface CardsProps {
   title: string;
-  value: number;
+  value: any;
   icon?: any;
   class?: React.CSSProperties;
 }

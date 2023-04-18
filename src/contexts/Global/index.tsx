@@ -18,6 +18,10 @@ interface GlobalContextData {
   handleTypeChange: (event: any) => void;
   handleCategoryChange: (event: any) => void;
   handleSubmit: (event: { preventDefault: () => void }) => void;
+
+  totalIncome: number;
+  totalOutcome: number;
+  total: number;
 }
 
 interface GlobalProviderProps {
@@ -35,7 +39,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       title: "Desenvolvimento de website",
       type: "deposit",
       category: "Venda",
-      amount: 12000,
+      amount: 5000,
       date: "13/04/2021",
     },
     {
@@ -72,6 +76,10 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setTitle("");
+    setAmount("");
+    setType("");
+    setCategory("");
   };
 
   // inset new transaction
@@ -110,6 +118,24 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
     handleCloseModal();
   };
 
+  // summary
+
+  const totalIncome = transactions.reduce((acc: number, transaction: any) => {
+    if (transaction.type === "deposit") {
+      return acc + Number(transaction.amount);
+    }
+    return acc;
+  }, 0);
+
+  const totalOutcome = transactions.reduce((acc: number, transaction: any) => {
+    if (transaction.type === "withdraw") {
+      return acc + Number(transaction.amount);
+    }
+    return acc;
+  }, 0);
+
+  const total = totalIncome - totalOutcome;
+
   useEffect(() => {
     console.log("provider useEffect");
   }, []);
@@ -133,6 +159,9 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
         handleTypeChange,
         handleCategoryChange,
         handleSubmit,
+        totalIncome,
+        totalOutcome,
+        total,
       }}
     >
       {children}
