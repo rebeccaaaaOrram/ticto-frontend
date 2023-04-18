@@ -1,6 +1,11 @@
+"use client";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { useGlobal } from "@/src/hooks/useGlobal";
 
 export function TableContent() {
+  const { removeTransaction, transactions } = useGlobal();
+
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -14,15 +19,20 @@ export function TableContent() {
           </tr>
         </thead>
         <tbody>
-          <tr className={styles.trBody}>
-            <td className={styles.pl_16}>Desenvolvimento de website</td>
-            <td className={styles.deposit}>R$ 12.000</td>
-            <td>Venda</td>
-            <td>13/04/2021</td>
-            <td className={styles.deleteButton}>
-              <img src="/assets/delete.png" alt="Excluir transação" />
-            </td>
-          </tr>
+          {transactions.map((item: any) => (
+            <tr className={styles.trBody} key={item.id}>
+              <td className={styles.pl_16}>{item.title}</td>
+              <td className={styles.deposit}>R$ {item.amount}</td>
+              <td>{item.category}</td>
+              <td>{item.date}</td>
+              <td
+                className={styles.deleteButton}
+                onClick={() => removeTransaction(item.id)}
+              >
+                <img src="/assets/delete.png" alt="Excluir transação" />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
