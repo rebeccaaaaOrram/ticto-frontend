@@ -9,60 +9,20 @@ import styles from "./styles.module.scss";
 import { useGlobal } from "@/src/hooks/useGlobal";
 
 export function Header() {
-  const [showModal, setShowModal] = useState(false);
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [type, setType] = useState("");
-  const [category, setCategory] = useState("");
-  const [date, setDate] = useState("");
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setTitle("");
-    setAmount("");
-    setType("");
-    setCategory("");
-    setDate("");
-  };
-
-  const handleNameChange = (event: any) => {
-    setTitle(event.target.value);
-  };
-
-  const handleamountChange = (event: any) => {
-    setAmount(event.target.value);
-  };
-
-  const handleTypeChange = (event: any) => {
-    setType(event.target.innerText.trim());
-  };
-
-  const handleCategoryChange = (event: any) => {
-    setCategory(event.target.value);
-  };
-
-  const handleDateChange = (event: any) => {
-    setDate(event.target.value);
-  };
-
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-    const transaction = {
-      title,
-      amount,
-      type,
-      category,
-      date: new Date().toLocaleDateString("pt-BR"),
-    };
-    addTransaction(transaction);
-    handleCloseModal();
-  };
-
-  const { addTransaction } = useGlobal();
+  const {
+    handleCloseModal,
+    handleOpenModal,
+    showModal,
+    title,
+    handleNameChange,
+    amount,
+    handleamountChange,
+    type,
+    handleTypeChange,
+    category,
+    handleCategoryChange,
+    handleSubmit,
+  } = useGlobal();
 
   return (
     <>
@@ -95,7 +55,9 @@ export function Header() {
                   <div className={styles.type}>
                     <button
                       type="button"
-                      className=""
+                      className={
+                        type === "Entrada" ? styles.active : styles.inactive
+                      }
                       onClick={handleTypeChange}
                     >
                       <Image src={Income} alt="income" />
@@ -103,7 +65,9 @@ export function Header() {
                     </button>
                     <button
                       type="button"
-                      className=""
+                      className={
+                        type === "Saída" ? styles.active : styles.inactive
+                      }
                       onClick={handleTypeChange}
                     >
                       <Image src={Outcome} alt="income" />

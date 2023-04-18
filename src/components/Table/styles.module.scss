@@ -24,11 +24,26 @@
 
 .trBody {
   border: 0;
-  background: #fff;
+  background: $white;
   height: 63px;
   border-radius: 8px;
 }
 
 .deleteButton {
   cursor: pointer;
+}
+
+.value {
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.deposit {
+  @extend .value;
+  color: $green-300;
+}
+
+.withdraw {
+  @extend .value;
+  color: $red-pink-400;
 }

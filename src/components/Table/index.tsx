@@ -22,7 +22,13 @@ export function TableContent() {
           {transactions.map((item: any) => (
             <tr className={styles.trBody} key={item.id}>
               <td className={styles.pl_16}>{item.title}</td>
-              <td className={styles.deposit}>R$ {item.amount}</td>
+              <td
+                className={
+                  item.type === "deposit" ? styles.deposit : styles.withdraw
+                }
+              >
+                R$ {item.amount}
+              </td>
               <td>{item.category}</td>
               <td>{item.date}</td>
               <td
