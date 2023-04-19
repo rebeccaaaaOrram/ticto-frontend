@@ -45,7 +45,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       type: "deposit",
       category: "Venda",
       amount: 5000,
-      date: "13/04/2021 às 14h30",
+      date: "13/04/2021 às 14:30",
     },
     {
       id: 2,
@@ -53,7 +53,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       type: "withdraw",
       category: "Alimentação",
       amount: 59,
-      date: "10/04/2021 às 14h30",
+      date: "10/04/2021 às 14:30",
     },
   ]);
 
