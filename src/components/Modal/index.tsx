@@ -28,7 +28,7 @@ export function Modal() {
             <button className={styles.close} onClick={handleCloseModal}>
               <Image src={Close} alt="Close" />
             </button>
-            <h1 className={styles.contentTitle}> Cadatro transação</h1>
+            <h1 className={styles.contentTitle}> Cadastro transação</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
