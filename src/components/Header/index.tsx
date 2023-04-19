@@ -1,5 +1,4 @@
 "use client";
-import { SetStateAction, useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/assets/logo.svg";
 import Close from "../../../public/assets/close.svg";
