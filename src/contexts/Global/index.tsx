@@ -1,4 +1,8 @@
 "use client";
+import moment from "moment";
+import "moment/locale/pt-br"; // import the pt-br locale
+moment.locale("pt-br"); // set the locale to pt-br
+
 import { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -41,7 +45,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       type: "deposit",
       category: "Venda",
       amount: 5000,
-      date: "13/04/2021",
+      date: "13/04/2021 às 14h30",
     },
     {
       id: 2,
@@ -49,7 +53,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       type: "withdraw",
       category: "Alimentação",
       amount: 59,
-      date: "10/04/2021",
+      date: "10/04/2021 às 14h30",
     },
   ]);
 
@@ -108,7 +112,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
       amount,
       type,
       category,
-      date: new Date().toLocaleDateString("pt-BR"),
+      date: moment().format("l") + " às " + moment().format("LT"),
     };
     addTransaction(transaction);
     handleCloseModal();
