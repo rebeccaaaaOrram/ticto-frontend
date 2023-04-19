@@ -1,4 +1,8 @@
-# Nextjs 13
+# Como rodar o projeto localmente
+
+- Clone ou baixe diretamente o repositório
+- Entre na pasta do projeto e no terminal, seja no do sistema ou do seu editor de código, digite npm install para instalar as dependências
+- Ao finalizar a instalação, digite npm run dev para rodar localmente o projeto
 
 # Problemas encontrados
 
