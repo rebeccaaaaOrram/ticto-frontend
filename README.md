@@ -4,11 +4,15 @@
 - Entre na pasta do projeto e no terminal, seja no do sistema ou do seu editor de código, digite npm install para instalar as dependências
 - Ao finalizar a instalação, digite npm run dev para rodar localmente o projeto
 
-# Problemas encontrados
+# Desafios encontrados
 
 - Tive um problema com o uso de hooks no lado do servidor na versão na qual iniciei o projeto com o
-  uso do 'use client'. Depois delongas buscas inclusive no rpositório do própio Nextjs tiv ecomo solução
+  uso do 'use client'. Depois delongas buscas inclusive no rpositório do própio Nextjs tive como solução
   setar uma versão anterior a qual eu estava usando e o erro foi corrigido.
+
+- Primeira vez utilizando a nova versão do Nextjs 13 com a pasta app/
+
+- Primeira vez utilizando SASS (Já usei muito Styled-Components, mas SASS puro com module foi a primeira fez)
 
 # Tecnologias Utilizadas
 
