@@ -33,7 +33,10 @@ export function TableContent() {
               <td>{item.date}</td>
               <td
                 className={styles.deleteButton}
-                onClick={() => removeTransaction(item.id)}
+                onClick={() => {
+                  removeTransaction(item.id);
+                  console.log(item.id);
+                }}
               >
                 <img src="/assets/delete.png" alt="Excluir transação" />
               </td>

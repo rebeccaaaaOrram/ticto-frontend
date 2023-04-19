@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface GlobalContextData {
   transactions: any;
@@ -78,7 +79,6 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
   };
 
   // inset new transaction
-
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
@@ -103,6 +103,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     const transaction = {
+      id: uuidv4(),
       title,
       amount,
       type,
@@ -132,8 +133,8 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
   const total = totalIncome - totalOutcome;
 
   useEffect(() => {
-    console.log("provider useEffect");
-  }, []);
+    console.log(transactions);
+  }, [transactions]);
 
   return (
     <GlobalContext.Provider
