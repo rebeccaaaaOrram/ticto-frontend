@@ -6,10 +6,6 @@
   uso do 'use client'. Depois delongas buscas inclusive no rpositório do própio Nextjs tiv ecomo solução
   setar uma versão anterior a qual eu estava usando e o erro foi corrigido.
 
-# Melhor descrição problema encontrado:
-
-# Solução
-
 # Tecnologias Utilizadas
 
 - NextJS 13.x.x
@@ -20,4 +16,10 @@
 
 # Preview
 
+<img src="/assets/prev.png" alt="Preview da aplicação"/>
+
 # Aplicação Live
+
+- Optei por uma versão live da aplicação para melhor visualização, e para isso utilizei a Vercel.
+
+Segue link da aplicação: <a href="https://ticto-frontend-nz2dj51e7-rebeccaaaaorram.vercel.app/" title="Link para a aplicação" target="_blank"> Ticto Frontend Challenger </a>
