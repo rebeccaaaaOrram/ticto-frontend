@@ -2,12 +2,20 @@
 
 .container {
   margin-top: 4rem;
+
+  @media screen and (max-width: 993px) {
+    overflow-x: scroll;
+  }
 }
 
 .table {
   width: 100%;
   border-spacing: 0px 0.5rem;
   // border-collapse: collapse;
+
+  @media screen and (max-width: 993px) {
+    width: 36rem;
+  }
 }
 
 .pl_16 {
