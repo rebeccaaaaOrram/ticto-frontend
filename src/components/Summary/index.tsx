@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useGlobal } from "@/src/hooks/useGlobal";
 import { Cards } from "../Cards";
 import styles from "./styles.module.scss";
@@ -8,12 +9,21 @@ export function Summary() {
   return (
     <div className={styles.container}>
       <Cards
-        icon={<img src="/assets/entradas.png" alt="Entrada" />}
+        icon={
+          <Image
+            src="/assets/entradas.png"
+            alt="Entrada"
+            width={19}
+            height={19}
+          />
+        }
         title="Entradas"
         value={totalIncome}
       />
       <Cards
-        icon={<img src="/assets/saida.png" alt="Saida" />}
+        icon={
+          <Image src="/assets/saida.png" alt="Saida" width={19} height={19} />
+        }
         title="Saidas"
         value={totalOutcome}
       />
