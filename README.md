@@ -16,7 +16,7 @@
 
 # Preview
 
-<img src="/assets/prev.png" alt="Preview da aplicação"/>
+<img src="https://raw.githubusercontent.com/rebeccaaaaOrram/ticto-frontend/main/public/assets/prev.png" alt="Preview da aplicação"/>
 
 # Aplicação Live
 
