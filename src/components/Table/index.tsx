@@ -19,8 +19,8 @@ export function TableContent() {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((item: any) => (
-            <tr className={styles.trBody} key={item.id}>
+          {transactions.map((item: any, index: number) => (
+            <tr className={styles.trBody} key={index}>
               <td className={styles.pl_16}>{item.title}</td>
               <td
                 className={

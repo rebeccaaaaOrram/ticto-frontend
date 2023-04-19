@@ -54,11 +54,6 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
 
   function addTransaction(newTransaction: any) {
     setTransactions([...transactions, newTransaction]);
-    // save in local storage
-    localStorage.setItem(
-      "u",
-      JSON.stringify([...transactions, newTransaction])
-    );
   }
 
   function removeTransaction(id: any) {
